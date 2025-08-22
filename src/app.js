@@ -10,9 +10,16 @@ import accountRoutes from "./routes/accountRoutes.js";
 
 const app = express();
 
+const allowedOrigins = [
+  "https://secure-banking-frontend-k5f3.vercel.app", // Your frontend domain
+  "http://localhost:3000" // Optional: for local testing
+];
+
+
 // Middlewares
 app.use(cors({
-    origin: ["https://secure-banking-frontend-k5f3.vercel.app.."], // update with deployed frontend URL
+    origin: allowedOrigins,
+    methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true,
 }));
 app.use(morgan("dev")); // logs requests
