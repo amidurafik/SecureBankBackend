@@ -12,7 +12,7 @@ const app = express();
 
 // Middlewares
 app.use(cors({
-    origin: ["https://secure-banking-frontend-k5f3.vercel.app"], // update with deployed frontend URL
+    origin: ["https://secure-banking-frontend-k5f3.vercel.app.."], // update with deployed frontend URL
     credentials: true,
 }));
 app.use(morgan("dev")); // logs requests
