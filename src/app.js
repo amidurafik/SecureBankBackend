@@ -11,7 +11,10 @@ import accountRoutes from "./routes/accountRoutes.js";
 const app = express();
 
 // Middlewares
-app.use(cors());
+app.use(cors({
+    origin: ["https://secure-banking-frontend-k5f3.vercel.app"], // update with deployed frontend URL
+    credentials: true,
+}));
 app.use(morgan("dev")); // logs requests
 app.use(express.json()); // parse JSON
 
